@@ -22,4 +22,4 @@ totals = sorted_totals_rdd.collect()
 for i, (total, cust_id) in enumerate(totals):
 	if i > 9:
 		break
-	print("Rank:\t{},\nCust:\t{},\nTotal:\t{:2f}\n".format(i+1, cust_id, total))
+	print("Rank:\t{},\nCust:\t{},\nTotal:\t{:.2f}\n".format(i+1, cust_id, total))
