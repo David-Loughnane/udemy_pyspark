@@ -3,16 +3,18 @@ from pyspark import SparkConf, SparkContext
 conf = SparkConf().setMaster('local').setAppName('mostWatchedMovie')
 sc = SparkContext(conf = conf)
 
-
+'''
 def parse_movies(lines):
 	line = lines.split()
 	movie = line[1]
 	return movie
+'''
 
 lines = sc.textFile("file:///Users/davidloughnane/Documents/training/udemy_pyspark/data/ml-100k/u.data")
 
 
-movies_rdd = lines.map(parse_movies)
+#movies_rdd = lines.map(parse_movies)
+movies_rdd = lines.map(lambda x: (int(x.split()[1])))
 
 #movies_count_rdd = movies_rdd.map(lambda x: (x,1)).reduceByKey(lambda x,y: x+y)
 #sorted_movies_count_rdd = movies_count_rdd.map(lambda x: (x[1], x[0])).sortByKey(ascending=False)
