@@ -3,6 +3,7 @@ from pyspark import SparkConf, SparkContext
 conf = SparkConf().setMaster('local').setAppName('MaxTemps')
 sc = SparkContext(conf = conf)
 
+
 def parseLines(lines):
 	fields = lines.split(',')
 	stationID = fields[0]
@@ -26,4 +27,4 @@ maxTemps = stationTemps.reduceByKey(lambda x, y: max(x,y))
 results = maxTemps.collect()
 
 for result in results:
-	print(result[0] + "\t{:.2f}".format(result[1]))
+	print("{}\t{:.2f}".format(result[0], result[1]))
