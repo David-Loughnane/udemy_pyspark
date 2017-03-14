@@ -52,6 +52,9 @@ for i, (word, count) in enumerate(sorted_word_count.items()):
 
 time2 = time.time()
 
+
+
+
 time3 = time.time()
 # implement countByValue
 word_count_rdd = words.map(lambda x: (x,1)).reduceByKey(lambda x, y: x + y)
