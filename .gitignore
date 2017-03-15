@@ -89,7 +89,7 @@ ENV/
 .ropeproject
 
 # Datasets
-ml-data/
+data/
 metastore_db/
 
 # mac specific
