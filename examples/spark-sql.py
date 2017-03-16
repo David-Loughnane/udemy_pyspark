@@ -32,6 +32,3 @@ for teen in teenagers.collect():
 
 # we can also use functions instead of SQL queries (arguably more efficient)
 schemaPeople_df.groupBy('age').count().orderBy('age').show()
-
-
-The master node does not have large computational requirements. For most clusters of 50 or fewer nodes, consider using a m3.xlarge . For clusters of more than 50 nodes, consider using an m3.2xlarge.
