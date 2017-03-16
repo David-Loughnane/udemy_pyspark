@@ -91,6 +91,7 @@ ENV/
 # Datasets
 data/
 metastore_db/
+checkpoint/ 
 
 # mac specific
 .DS_Store
